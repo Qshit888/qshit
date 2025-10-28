@@ -32,15 +32,17 @@
         <button id="refreshBtn" class="primary-btn">刷新数据</button>
       </section>
 
-      <section class="card">
+      <section class="card card--chart">
         <div class="card__header">
           <h2>每小时走势图</h2>
           <span id="lastUpdated" class="caption"></span>
         </div>
-        <canvas id="hourlyChart" height="220"></canvas>
+        <div class="chart-container">
+          <canvas id="hourlyChart"></canvas>
+        </div>
       </section>
 
-      <section class="card">
+      <section class="card card--table">
         <div class="card__header">
           <h2>小时统计表</h2>
         </div>

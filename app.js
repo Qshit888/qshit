@@ -152,6 +152,11 @@ function renderChart(series) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      resizeDelay: 0,
+      animation: {
+        duration: 300,
+        easing: 'easeOutCubic',
+      },
       interaction: {
         mode: 'index',
         intersect: false,
@@ -181,6 +186,7 @@ function renderChart(series) {
     chartInstance.destroy();
   }
   chartInstance = new Chart(chartCanvas, config);
+  chartInstance.resize();
 }
 
 function refreshView() {
