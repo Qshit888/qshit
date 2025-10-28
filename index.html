@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>永续合约小时涨跌统计</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>U 本位永续合约</h1>
+      <p>每小时上涨 / 下跌家数统计</p>
+    </header>
+
+    <main class="page-main">
+      <section class="toolbar">
+        <label class="toolbar__group">
+          <span>交易所</span>
+          <select id="exchangeSelect"></select>
+        </label>
+        <label class="toolbar__group">
+          <span>日期</span>
+          <input type="date" id="dateInput" />
+        </label>
+        <button id="refreshBtn" class="primary-btn">刷新数据</button>
+      </section>
+
+      <section class="card card--chart">
+        <div class="card__header">
+          <h2>每小时走势图</h2>
+          <span id="lastUpdated" class="caption"></span>
+        </div>
+        <div class="chart-container">
+          <canvas id="hourlyChart"></canvas>
+        </div>
+      </section>
+
+      <section class="card card--table">
+        <div class="card__header">
+          <h2>小时统计表</h2>
+        </div>
+        <div class="table-wrapper">
+          <table id="hourlyTable">
+            <thead>
+              <tr>
+                <th>时间</th>
+                <th>上涨</th>
+                <th>下跌</th>
+                <th>持平</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>
+        数据来源：请接入交易所 API。此页面目前展示示例数据，可在
+        <code>app.js</code> 中替换为真实接口。
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
