@@ -1,0 +1,17 @@
+{
+  "name": "qshit",
+  "version": "1.0.0",
+  "description": "Binance market breadth tracker",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "keywords": [
+    "binance",
+    "market",
+    "tracker"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs"
+}
