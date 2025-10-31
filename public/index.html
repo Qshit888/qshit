@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>币安市场上涨下跌家数追踪</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" integrity="sha256-ffn/6VQwWi4KFOF+sy2dDoU3aEOfNIKYQMfVh6X5CXo=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <h1>币安市场上涨下跌家数追踪</h1>
+      <p>
+        数据来源：<a href="https://www.binance.com/zh-CN/markets/trading_data/rankings" target="_blank" rel="noopener">Binance 交易数据</a>
+      </p>
+    </header>
+
+    <main>
+      <section class="stats">
+        <div class="stat">
+          <span class="label">上涨</span>
+          <span class="value" id="upCount">--</span>
+        </div>
+        <div class="stat">
+          <span class="label">下跌</span>
+          <span class="value" id="downCount">--</span>
+        </div>
+        <div class="stat">
+          <span class="label">持平</span>
+          <span class="value" id="flatCount">--</span>
+        </div>
+        <div class="stat">
+          <span class="label">最后更新时间</span>
+          <span class="value" id="lastUpdated">--</span>
+        </div>
+      </section>
+
+      <section class="chart-container">
+        <canvas id="breadthChart" aria-label="上涨下跌家数变化曲线" role="img"></canvas>
+      </section>
+
+      <section class="info">
+        <h2>说明</h2>
+        <ul>
+          <li>服务器每 10 分钟调用 Binance 公共 API 统计 24 小时涨跌幅为正、负和持平的交易对数量。</li>
+          <li>页面会自动刷新数据，并展示上涨、下跌、持平家数的时间序列曲线。</li>
+          <li>如果需要立即刷新，可以点击下方的手动刷新按钮。</li>
+        </ul>
+        <button id="refreshButton" type="button">手动刷新</button>
+        <p class="disclaimer">注意：Binance 公共接口偶尔会出现限流或网络波动，如遇异常请稍后重试。</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>由自动化脚本每 10 分钟更新一次数据。</p>
+    </footer>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
